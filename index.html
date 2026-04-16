@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty & Mode Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#f5f5f5}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#000;color:#fff}
+header h1{color:#ff4081}
+nav a{margin:0 15px;cursor:pointer}
+
+.section{display:none}
+.active{display:block}
+
+.hero{height:90vh;background:url('https://images.unsplash.com/photo-1517841905240-472988babdf9') center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff}
+.hero h2{font-size:50px}
+
+.category{padding:30px}
+.category h2{margin:20px 0;color:#ff4081}
+
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.card img{width:100%;height:250px;object-fit:cover}
+.card-content{text-align:center;padding:15px}
+.price{color:#ff4081}
+
+.contact{background:#111;color:#fff;padding:50px;text-align:center}
+input,textarea{width:80%;padding:10px;margin:10px;border:none;border-radius:5px}
+.btn{padding:10px 20px;background:#ff4081;color:#fff;border:none;border-radius:20px;cursor:pointer}
+
+footer{text-align:center;background:#000;color:#fff;padding:20px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Beauty & Mode</h1>
+<nav>
+<a onclick="showSection('home')">Accueil</a>
+<a onclick="showSection('produits')">Produits</a>
+<a onclick="showSection('contact')">Contact</a>
+</nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section active">
+<div class="hero">
+<h2>Fashion Boutique</h2>
+<p>Femme • Homme • Enfant • Beauté</p>
+<button class="btn" onclick="showSection('produits')">Découvrir</button>
+</div>
+</section>
+
+<!-- PRODUITS -->
+<section id="produits" class="section">
+
+<div class="category">
+<h2>Mode Femme</h2>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e"><div class="card-content"><h3>Robe chic</h3><p class="price">30 000 Ar</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1495121605193-b116b5b09a5f"><div class="card-content"><h3>Ensemble femme</h3><p class="price">35 000 Ar</p></div></div>
+</div>
+</div>
+
+<div class="category">
+<h2>Mode Homme</h2>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1520975916090-3105956dac38"><div class="card-content"><h3>T-shirt homme</h3><p class="price">25 000 Ar</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b"><div class="card-content"><h3>Veste homme</h3><p class="price">45 000 Ar</p></div></div>
+</div>
+</div>
+
+<div class="category">
+<h2>Mode Enfant</h2>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9"><div class="card-content"><h3>Tenue enfant</h3><p class="price">15 000 Ar</p></div></div>
+</div>
+</div>
+
+<div class="category">
+<h2>Chaussures & Sacs</h2>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772"><div class="card-content"><h3>Baskets</h3><p class="price">50 000 Ar</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3"><div class="card-content"><h3>Sac à main</h3><p class="price">40 000 Ar</p></div></div>
+</div>
+</div>
+
+<div class="category">
+<h2>Cosmétiques</h2>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569"><div class="card-content"><h3>Parfum</h3><p class="price">50 000 Ar</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796"><div class="card-content"><h3>Maquillage</h3><p class="price">25 000 Ar</p></div></div>
+</div>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<div class="contact">
+<h2>Contact</h2>
+<input placeholder="Nom"><br>
+<input placeholder="Email"><br>
+<textarea placeholder="Message"></textarea><br>
+<button class="btn">Envoyer</button>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Beauty & Mode</p>
+</footer>
+
+<script>
+function showSection(id){
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
